@@ -222,8 +222,37 @@ add_filter('get_archives_link', 'my_archives_link');
 
 
 
-
-
-
+// カスタム投稿タイプの追加
+add_action('init', 'create_news');
+function create_news() {
+  register_post_type('news', array(
+    'labels' => array(
+    'name' => '不動産',
+    'singular_name' => 'お知らせ',
+  ),
+  'public' => true,
+  'publicly_queryable' => true,
+  'show_ui' => true,
+  'query_var' => true,
+  'rewrite' => true,
+  'capability_type' => 'post',
+  'has_archive' => true,
+  'hierarchical' => false,
+  'menu_position' => 5,
+  'supports' => array('title', 'editor', 'thumbnail')
+  ));
+ 
+  // 追加した箇所
+  register_taxonomy('tax_news',array('news'), array(
+    'hierarchical' => true,
+    'label' => 'カテゴリ～',
+    'show_ui' => true,
+    'public' => true
+  ));
+ 
+  register_taxonomy_for_object_type( 'tax_news', array('news') );
+  // 追加した箇所
+ 
+}
 
 ?>
