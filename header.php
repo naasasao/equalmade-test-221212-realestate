@@ -14,15 +14,6 @@ $service = esc_url(home_url('/service/'));
 <html <?php language_attributes(); ?>>
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6RWT88YRKH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-6RWT88YRKH');
-    </script>
 
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +25,7 @@ $service = esc_url(home_url('/service/'));
     <?php
     global $page, $paged;
     if (is_front_page()) : //トップページ
-      echo '岩守産業 株式会社｜北海道名寄市';
+      echo '';
       bloginfo('name');
     elseif (is_home()) : //ブログページ（ブログサイトの場合はトップページ）
       wp_title('｜', true, 'right');
@@ -48,10 +39,9 @@ $service = esc_url(home_url('/service/'));
     elseif (is_category()) : //カテゴリーページ
       echo 'カテゴリ ：';
       echo single_term_title();
-      echo '｜岩守産業 株式会社';
+      echo '｜';
     elseif (is_archive()) : //アーカイブページ
-      echo wp_title('') . '年のお知らせ｜岩守産業 株式会社';
-    // echo'｜岩守産業 株式会社';
+      echo wp_title('') . '';
     elseif (is_404()) : //404ページ
       echo '404｜';
       bloginfo('name');
@@ -64,16 +54,16 @@ $service = esc_url(home_url('/service/'));
     endif;
     ?>
   </title>
-  <meta name="description" content="上川北部で唯一の安定型最終処分場を自社保有し、産業廃棄物処理や土木工事、解体工事、道路除雪、施設管理、貨物自動車運送と幅広くインフラ・ライフラインの維持管理に努めています。">
-  <meta name="keywords" content="岩守産業,北海道,名寄市,産業廃棄物,土木工事.解体工事,トラック,運送">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
   <meta name="robots" content="all" />
   <!-- OGP -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="岩守産業 株式会社｜北海道名寄市">
-  <meta property="og:description" content="上川北部で唯一の安定型最終処分場を自社保有し、産業廃棄物処理や土木工事、解体工事、道路除雪、施設管理、貨物自動車運送と幅広くインフラ・ライフラインの維持管理に努めています。">
-  <meta property="og:url" content="https://www.iwamori.co.jp/">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="">
   <meta property="og:image" content="">
-  <meta property="og:site_name" content="岩守産業 株式会社｜北海道名寄市">
+  <meta property="og:site_name" content="">
   <!-- ファビコン -->
   <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/common/favicon.ico" />
 
@@ -96,7 +86,7 @@ $service = esc_url(home_url('/service/'));
       <!-- ロゴ -->
       <h1 class="header__logo">
         <a href="<?php echo $home ?>" class="header__logo-link">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/common/header-logo.svg" alt="岩守産業株式会社ロゴ">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/common/header-logo.svg" alt="">
         </a>
       </h1>
 
@@ -116,7 +106,7 @@ $service = esc_url(home_url('/service/'));
             </ul>
           </li>
           <li class="header__item u-desktop-1440"><a href="<?php echo $company ?>">会社情報</a></li>
-          <li class="header__item u-desktop-1440"><a href="https://en-gage.net/iwamori_saiyo" target="_blank" rel="noreferrer noopener">採用情報</a></li>
+          <li class="header__item u-desktop-1440"><a href="" target="_blank" rel="noreferrer noopener">採用情報</a></li>
           <li class="header__item u-desktop-1440"><a href="<?php echo $news ?>">お知らせ</a></li>
           <li class="header__item-access u-desktop-1440"><a href="<?php echo esc_url(home_url('/')); ?>company#company-main">アクセス</a></li>
           <li class="header__item header__item--green"><a href="<?php echo $contact ?>">お問い合せ</a></li>
@@ -127,22 +117,13 @@ $service = esc_url(home_url('/service/'));
         <ul class="header__sp-nav__items" id="nav">
           <li class="header__sp-nav__item"><a class="link" href="<?php echo $service ?>">事業内容</a></li>
           <li class="header__sp-nav__item"><a class="link" href="<?php echo $company ?>">会社情報</a></li>
-          <li class="header__sp-nav__item"><a href="https://en-gage.net/iwamori_saiyo" target="_blank" rel="noreferrer noopener">採用情報</a></li>
+          <li class="header__sp-nav__item"><a href="" target="_blank" rel="noreferrer noopener">採用情報</a></li>
           <li class="header__sp-nav__item"><a class="link" href="<?php echo $news ?>">お知らせ</a></li>
           <li class="header__sp-nav__item"><a class="link" href="<?php echo esc_url(home_url('/')); ?>company#company-main">アクセス</a></li>
           <li class="header__sp-nav__item"><a class="link" href="<?php echo $contact ?>">お問い合せ</a></li>
         </ul>
       </nav>
-    </div>
 
-    <!-- ローディングスピナー -->
-    <div class="cube-wrapper" id="loader">
-      <div class="cube-folding">
-        <span class="leaf1"></span>
-        <span class="leaf2"></span>
-        <span class="leaf3"></span>
-        <span class="leaf4"></span>
-      </div>
     </div>
 
   </header>
