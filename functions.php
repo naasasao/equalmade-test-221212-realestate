@@ -255,4 +255,11 @@ function create_news() {
  
 }
 
+
+
+
+
+
+
+
 ?>
